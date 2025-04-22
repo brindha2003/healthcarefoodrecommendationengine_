@@ -2,6 +2,8 @@
 <%@ page import="com.healthCareFoodRecommendation.Model.DiabeticUser" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 
 <%
     // Get user from session
@@ -18,35 +20,308 @@
     String activityRecommendation = "";
     String mealTiming = "";
     
-    // Food recommendations database - defined regardless of login status
-    Map<String, Map<String, String>> foodRecommendations = new HashMap<>();
+    // Enhanced Food recommendations database with Indian/Tamilnadu foods
+    Map<String, Map<String, List<String>>> foodRecommendations = new HashMap<>();
     
-    // Type 1 diabetes recommendations
-    Map<String, String> type1Recs = new HashMap<>();
-    type1Recs.put("Veg", "Quinoa with roasted vegetables (45g carbs) + insulin dose as directed");
-    type1Recs.put("Non-Veg", "Grilled salmon with asparagus (30g carbs) + insulin dose as directed");
+    // Type 1 diabetes recommendations (with carb counts for insulin users)
+    Map<String, List<String>> type1Recs = new HashMap<>();
+    List<String> type1Veg = new ArrayList<>();
+    type1Veg.add("Quinoa Pongal with vegetables (45g carbs) + insulin dose as directed");
+    type1Veg.add("Methi (Fenugreek) Roti with dal (35g carbs) + insulin dose as directed");
+    type1Veg.add("Bajra (Pearl Millet) Dosa with sambar (40g carbs) + insulin dose as directed");
+    type1Veg.add("Vegetable Kootu with brown rice (50g carbs) + insulin dose as directed");
+    type1Veg.add("Paneer Bhurji with multigrain roti (30g carbs) + insulin dose as directed");
+    type1Veg.add("Ragi (Finger Millet) Idli with coconut chutney (35g carbs) + insulin dose");
+    type1Veg.add("Thinai (Foxtail Millet) Upma with vegetables (40g carbs) + insulin dose");
+    type1Veg.add("Kambu (Pearl Millet) Adai with avial (45g carbs) + insulin dose");
+    type1Veg.add("Samai (Little Millet) Pongal with ghee (40g carbs) + insulin dose");
+    type1Veg.add("Varagu (Kodo Millet) Lemon Rice (35g carbs) + insulin dose");
+    type1Veg.add("Vegetable Stew with appam (45g carbs) + insulin dose");
+    type1Veg.add("Moong Dal Khichdi with curd (40g carbs) + insulin dose");
+    type1Veg.add("Vegetable Biryani with raita (50g carbs) + insulin dose");
+    type1Veg.add("Pesarattu (Green Gram Dosa) with ginger chutney (30g carbs) + insulin dose");
+    type1Veg.add("Oats Idli with sambar (35g carbs) + insulin dose");
+    type1Veg.add("Vegetable Pulao with cucumber raita (45g carbs) + insulin dose");
+    type1Veg.add("Masala Dosa with coconut chutney (50g carbs) + insulin dose");
+    type1Veg.add("Vegetable Kurma with whole wheat roti (40g carbs) + insulin dose");
+    type1Veg.add("Soya Chunks Curry with brown rice (45g carbs) + insulin dose");
+    type1Veg.add("Sprouts Salad with lemon dressing (25g carbs) + insulin dose");
+    type1Veg.add("Vegetable Uttapam with tomato chutney (40g carbs) + insulin dose");
+    type1Veg.add("Dal Tadka with jowar roti (35g carbs) + insulin dose");
+    type1Veg.add("Vegetable Khichdi with papad (40g carbs) + insulin dose");
+    type1Veg.add("Avial with small portion of red rice (45g carbs) + insulin dose");
+    type1Veg.add("Keerai (Spinach) Kootu with millet roti (30g carbs) + insulin dose");
+    type1Veg.add("Mixed Vegetable Sambar with quinoa (40g carbs) + insulin dose");
+    type1Veg.add("Vegetable Pongal with sambar (45g carbs) + insulin dose");
+    type1Veg.add("Paneer Tikka with multigrain roti (35g carbs) + insulin dose");
+    type1Veg.add("Vegetable Stir Fry with brown rice (40g carbs) + insulin dose");
+    type1Veg.add("Dal Makhani with bajra roti (35g carbs) + insulin dose");
+    type1Recs.put("Veg", type1Veg);
+    
+    List<String> type1NonVeg = new ArrayList<>();
+    type1NonVeg.add("Grilled fish with millet rice (30g carbs) + insulin dose as directed");
+    type1NonVeg.add("Chicken Chettinad with small portion of rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Egg curry with whole wheat roti (35g carbs) + insulin dose as directed");
+    type1NonVeg.add("Fish curry with quinoa (30g carbs) + insulin dose as directed");
+    type1NonVeg.add("Mutton sukka with ragi roti (25g carbs) + insulin dose as directed");
+    type1NonVeg.add("Nethili (Anchovy) Fish Fry with millet rice (30g carbs) + insulin dose");
+    type1NonVeg.add("Chicken Biryani with raita (50g carbs) + insulin dose");
+    type1NonVeg.add("Egg Bhurji with multigrain roti (30g carbs) + insulin dose");
+    type1NonVeg.add("Fish Molee with appam (45g carbs) + insulin dose");
+    type1NonVeg.add("Prawn Curry with brown rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Chicken Stew with whole wheat bread (35g carbs) + insulin dose");
+    type1NonVeg.add("Mutton Curry with bajra roti (30g carbs) + insulin dose");
+    type1NonVeg.add("Egg Roast with dosa (40g carbs) + insulin dose");
+    type1NonVeg.add("Fish Puttu with coconut milk (35g carbs) + insulin dose");
+    type1NonVeg.add("Chicken 65 with small portion of rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Crab Masala with quinoa (30g carbs) + insulin dose");
+    type1NonVeg.add("Egg Fried Rice with vegetables (45g carbs) + insulin dose");
+    type1NonVeg.add("Chicken Tikka with roti (35g carbs) + insulin dose");
+    type1NonVeg.add("Fish Biryani with raita (50g carbs) + insulin dose");
+    type1NonVeg.add("Prawn Masala with millet dosa (40g carbs) + insulin dose");
+    type1NonVeg.add("Mutton Biryani with onion raita (55g carbs) + insulin dose");
+    type1NonVeg.add("Chicken Curry with appam (45g carbs) + insulin dose");
+    type1NonVeg.add("Egg Dosa with chutney (40g carbs) + insulin dose");
+    type1NonVeg.add("Fish Cutlet with salad (30g carbs) + insulin dose");
+    type1NonVeg.add("Chicken Sukka with ragi roti (35g carbs) + insulin dose");
+    type1NonVeg.add("Prawn Fry with quinoa upma (40g carbs) + insulin dose");
+    type1NonVeg.add("Mutton Keema with whole wheat paratha (45g carbs) + insulin dose");
+    type1NonVeg.add("Chicken Roast with small portion of rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Egg Curry with millet dosa (35g carbs) + insulin dose");
+    type1NonVeg.add("Fish Tikka with salad (25g carbs) + insulin dose");
+    type1Recs.put("Non-Veg", type1NonVeg);
     foodRecommendations.put("Type 1", type1Recs);
     
-    // Type 2 diabetes recommendations
-    Map<String, String> type2Recs = new HashMap<>();
-    type2Recs.put("Veg", "Lentil soup with whole grain bread (Low glycemic)");
-    type2Recs.put("Non-Veg", "Baked chicken with steamed broccoli and cauliflower rice");
+    // Type 2 diabetes recommendations (low glycemic index)
+    Map<String, List<String>> type2Recs = new HashMap<>();
+    List<String> type2Veg = new ArrayList<>();
+    type2Veg.add("Kambu (Pearl Millet) Koozh with buttermilk");
+    type2Veg.add("Avial with small portion of brown rice");
+    type2Veg.add("Keerai (Spinach) Kootu with millet roti");
+    type2Veg.add("Sundal (Steamed Legumes) salad");
+    type2Veg.add("Vegetable Sambar with ragi dosa");
+    type2Veg.add("Thinai (Foxtail Millet) Pongal with vegetables");
+    type2Veg.add("Ragi (Finger Millet) Mudde with sambar");
+    type2Veg.add("Samai (Little Millet) Upma with vegetables");
+    type2Veg.add("Varagu (Kodo Millet) Pulao with raita");
+    type2Veg.add("Kuthiraivali (Barnyard Millet) Khichdi");
+    type2Veg.add("Paneer Tikka with salad");
+    type2Veg.add("Vegetable Stir Fry with tofu");
+    type2Veg.add("Moong Dal Chilla with mint chutney");
+    type2Veg.add("Vegetable Soup with flaxseed crackers");
+    type2Veg.add("Sprouted Moong Salad with lemon dressing");
+    type2Veg.add("Bajra (Pearl Millet) Roti with dal");
+    type2Veg.add("Vegetable Stew with small appam");
+    type2Veg.add("Quinoa Upma with vegetables");
+    type2Veg.add("Vegetable Kurma with jowar roti");
+    type2Veg.add("Dal Tadka with bajra roti");
+    type2Veg.add("Vegetable Khichdi with yogurt");
+    type2Veg.add("Pesarattu (Green Gram Dosa) with coconut chutney");
+    type2Veg.add("Vegetable Pongal with sambar");
+    type2Veg.add("Oats Idli with tomato chutney");
+    type2Veg.add("Vegetable Biryani with cucumber raita");
+    type2Veg.add("Masala Dosa with mint chutney");
+    type2Veg.add("Vegetable Pulao with raita");
+    type2Veg.add("Dal Makhani with multigrain roti");
+    type2Veg.add("Vegetable Uttapam with sambar");
+    type2Veg.add("Soya Chunks Curry with brown rice");
+    type2Recs.put("Veg", type2Veg);
+    
+    List<String> type2NonVeg = new ArrayList<>();
+    type2NonVeg.add("Nethili (Anchovy) Fish curry with millet rice");
+    type2NonVeg.add("Chicken stew with appam (1 piece)");
+    type2NonVeg.add("Egg white curry with whole wheat dosa");
+    type2NonVeg.add("Fish moilee with small portion of red rice");
+    type2NonVeg.add("Grilled prawns with vegetable stir fry");
+    type2NonVeg.add("Chicken Roast with quinoa");
+    type2NonVeg.add("Fish Tikka with salad");
+    type2NonVeg.add("Egg Bhurji with multigrain roti");
+    type2NonVeg.add("Prawn Curry with millet dosa");
+    type2NonVeg.add("Chicken Tikka with salad");
+    type2NonVeg.add("Fish Cutlet with cucumber raita");
+    type2NonVeg.add("Egg Fried Rice with vegetables (small portion)");
+    type2NonVeg.add("Chicken Curry with bajra roti");
+    type2NonVeg.add("Fish Puttu with coconut milk");
+    type2NonVeg.add("Prawn Masala with quinoa");
+    type2NonVeg.add("Chicken Sukka with ragi roti");
+    type2NonVeg.add("Egg Roast with whole wheat bread");
+    type2NonVeg.add("Fish Molee with small appam");
+    type2NonVeg.add("Crab Masala with salad");
+    type2NonVeg.add("Chicken Biryani with raita (small portion)");
+    type2NonVeg.add("Mutton Curry with millet roti");
+    type2NonVeg.add("Egg Dosa with mint chutney");
+    type2NonVeg.add("Fish Fry with vegetable salad");
+    type2NonVeg.add("Chicken 65 with cucumber raita");
+    type2NonVeg.add("Prawn Fry with quinoa upma");
+    type2NonVeg.add("Mutton Keema with multigrain roti");
+    type2NonVeg.add("Chicken Chettinad with small portion of rice");
+    type2NonVeg.add("Egg Curry with millet dosa");
+    type2NonVeg.add("Fish Biryani with raita (small portion)");
+    type2Recs.put("Non-Veg", type2NonVeg);
     foodRecommendations.put("Type 2", type2Recs);
     
     // Gestational diabetes recommendations
-    Map<String, String> gestationalRecs = new HashMap<>();
-    gestationalRecs.put("Veg", "Greek yogurt with berries and nuts");
-    gestationalRecs.put("Non-Veg", "Turkey and avocado wrap on whole wheat");
+    Map<String, List<String>> gestationalRecs = new HashMap<>();
+    List<String> gestationalVeg = new ArrayList<>();
+    gestationalVeg.add("Paneer and vegetable stuffed roti with curd");
+    gestationalVeg.add("Moong dal dosa with coconut chutney");
+    gestationalVeg.add("Vegetable upma with flaxseeds");
+    gestationalVeg.add("Soya chunks curry with brown rice");
+    gestationalVeg.add("Sprouts salad with lemon dressing");
+    gestationalVeg.add("Ragi (Finger Millet) Idli with sambar");
+    gestationalVeg.add("Thinai (Foxtail Millet) Pongal with vegetables");
+    gestationalVeg.add("Kambu (Pearl Millet) Koozh with buttermilk");
+    gestationalVeg.add("Samai (Little Millet) Upma with vegetables");
+    gestationalVeg.add("Varagu (Kodo Millet) Lemon Rice");
+    gestationalVeg.add("Vegetable Stew with small appam");
+    gestationalVeg.add("Moong Dal Khichdi with curd");
+    gestationalVeg.add("Vegetable Biryani with raita (small portion)");
+    gestationalVeg.add("Pesarattu (Green Gram Dosa) with ginger chutney");
+    gestationalVeg.add("Oats Idli with tomato chutney");
+    gestationalVeg.add("Vegetable Pulao with cucumber raita");
+    gestationalVeg.add("Masala Dosa with coconut chutney");
+    gestationalVeg.add("Vegetable Kurma with whole wheat roti");
+    gestationalVeg.add("Soya Chunks Curry with brown rice");
+    gestationalVeg.add("Sprouts Salad with lemon dressing");
+    gestationalVeg.add("Vegetable Uttapam with sambar");
+    gestationalVeg.add("Dal Tadka with jowar roti");
+    gestationalVeg.add("Vegetable Khichdi with papad");
+    gestationalVeg.add("Avial with small portion of red rice");
+    gestationalVeg.add("Keerai (Spinach) Kootu with millet roti");
+    gestationalVeg.add("Mixed Vegetable Sambar with quinoa");
+    gestationalVeg.add("Vegetable Pongal with sambar");
+    gestationalVeg.add("Paneer Tikka with multigrain roti");
+    gestationalVeg.add("Vegetable Stir Fry with brown rice");
+    gestationalVeg.add("Dal Makhani with bajra roti");
+    gestationalRecs.put("Veg", gestationalVeg);
+    
+    List<String> gestationalNonVeg = new ArrayList<>();
+    gestationalNonVeg.add("Boiled egg with whole wheat toast");
+    gestationalNonVeg.add("Fish curry with small portion of rice");
+    gestationalNonVeg.add("Chicken soup with vegetables");
+    gestationalNonVeg.add("Grilled fish with quinoa upma");
+    gestationalNonVeg.add("Egg white omelette with multigrain bread");
+    gestationalNonVeg.add("Nethili (Anchovy) Fish Fry with millet rice");
+    gestationalNonVeg.add("Chicken Biryani with raita (small portion)");
+    gestationalNonVeg.add("Egg Bhurji with multigrain roti");
+    gestationalNonVeg.add("Fish Molee with small appam");
+    gestationalNonVeg.add("Prawn Curry with brown rice");
+    gestationalNonVeg.add("Chicken Stew with whole wheat bread");
+    gestationalNonVeg.add("Mutton Curry with bajra roti");
+    gestationalNonVeg.add("Egg Roast with dosa");
+    gestationalNonVeg.add("Fish Puttu with coconut milk");
+    gestationalNonVeg.add("Chicken 65 with cucumber raita");
+    gestationalNonVeg.add("Crab Masala with quinoa");
+    gestationalNonVeg.add("Egg Fried Rice with vegetables (small portion)");
+    gestationalNonVeg.add("Chicken Tikka with roti");
+    gestationalNonVeg.add("Fish Biryani with raita (small portion)");
+    gestationalNonVeg.add("Prawn Masala with millet dosa");
+    gestationalNonVeg.add("Mutton Biryani with onion raita (small portion)");
+    gestationalNonVeg.add("Chicken Curry with appam");
+    gestationalNonVeg.add("Egg Dosa with chutney");
+    gestationalNonVeg.add("Fish Cutlet with salad");
+    gestationalNonVeg.add("Chicken Sukka with ragi roti");
+    gestationalNonVeg.add("Prawn Fry with quinoa upma");
+    gestationalNonVeg.add("Mutton Keema with whole wheat paratha");
+    gestationalNonVeg.add("Chicken Roast with small portion of rice");
+    gestationalNonVeg.add("Egg Curry with millet dosa");
+    gestationalNonVeg.add("Fish Tikka with salad");
+    gestationalRecs.put("Non-Veg", gestationalNonVeg);
     foodRecommendations.put("Gestational", gestationalRecs);
     
     // Default recommendations
-    Map<String, String> defaultRecs = new HashMap<>();
-    defaultRecs.put("Veg", "Mixed vegetable curry with brown rice");
-    defaultRecs.put("Non-Veg", "Grilled fish with quinoa and greens");
+    Map<String, List<String>> defaultRecs = new HashMap<>();
+    List<String> defaultVeg = new ArrayList<>();
+    defaultVeg.add("Mixed vegetable sambar with brown rice");
+    defaultVeg.add("Dal tadka with jowar roti");
+    defaultVeg.add("Vegetable kurma with millet dosa");
+    defaultVeg.add("Pesarattu (Green Gram Dosa) with ginger chutney");
+    defaultVeg.add("Vegetable biryani with raita (small portion)");
+    defaultVeg.add("Ragi (Finger Millet) Idli with sambar");
+    defaultVeg.add("Thinai (Foxtail Millet) Pongal with vegetables");
+    defaultVeg.add("Kambu (Pearl Millet) Koozh with buttermilk");
+    defaultVeg.add("Samai (Little Millet) Upma with vegetables");
+    defaultVeg.add("Varagu (Kodo Millet) Lemon Rice");
+    defaultVeg.add("Vegetable Stew with small appam");
+    defaultVeg.add("Moong Dal Khichdi with curd");
+    defaultVeg.add("Vegetable Biryani with raita (small portion)");
+    defaultVeg.add("Pesarattu (Green Gram Dosa) with ginger chutney");
+    defaultVeg.add("Oats Idli with tomato chutney");
+    defaultVeg.add("Vegetable Pulao with cucumber raita");
+    defaultVeg.add("Masala Dosa with coconut chutney");
+    defaultVeg.add("Vegetable Kurma with whole wheat roti");
+    defaultVeg.add("Soya Chunks Curry with brown rice");
+    defaultVeg.add("Sprouts Salad with lemon dressing");
+    defaultVeg.add("Vegetable Uttapam with sambar");
+    defaultVeg.add("Dal Tadka with jowar roti");
+    defaultVeg.add("Vegetable Khichdi with papad");
+    defaultVeg.add("Avial with small portion of red rice");
+    defaultVeg.add("Keerai (Spinach) Kootu with millet roti");
+    defaultVeg.add("Mixed Vegetable Sambar with quinoa");
+    defaultVeg.add("Vegetable Pongal with sambar");
+    defaultVeg.add("Paneer Tikka with multigrain roti");
+    defaultVeg.add("Vegetable Stir Fry with brown rice");
+    defaultVeg.add("Dal Makhani with bajra roti");
+    defaultRecs.put("Veg", defaultVeg);
+    
+    List<String> defaultNonVeg = new ArrayList<>();
+    defaultNonVeg.add("Grilled fish with quinoa and greens");
+    defaultNonVeg.add("Chicken curry with small portion of rice");
+    defaultNonVeg.add("Egg curry with whole wheat roti");
+    defaultNonVeg.add("Fish fry with vegetable salad");
+    defaultNonVeg.add("Mutton curry with bajra roti");
+    defaultNonVeg.add("Nethili (Anchovy) Fish Fry with millet rice");
+    defaultNonVeg.add("Chicken Biryani with raita (small portion)");
+    defaultNonVeg.add("Egg Bhurji with multigrain roti");
+    defaultNonVeg.add("Fish Molee with small appam");
+    defaultNonVeg.add("Prawn Curry with brown rice");
+    defaultNonVeg.add("Chicken Stew with whole wheat bread");
+    defaultNonVeg.add("Mutton Curry with bajra roti");
+    defaultNonVeg.add("Egg Roast with dosa");
+    defaultNonVeg.add("Fish Puttu with coconut milk");
+    defaultNonVeg.add("Chicken 65 with cucumber raita");
+    defaultNonVeg.add("Crab Masala with quinoa");
+    defaultNonVeg.add("Egg Fried Rice with vegetables (small portion)");
+    defaultNonVeg.add("Chicken Tikka with roti");
+    defaultNonVeg.add("Fish Biryani with raita (small portion)");
+    defaultNonVeg.add("Prawn Masala with millet dosa");
+    defaultNonVeg.add("Mutton Biryani with onion raita (small portion)");
+    defaultNonVeg.add("Chicken Curry with appam");
+    defaultNonVeg.add("Egg Dosa with chutney");
+    defaultNonVeg.add("Fish Cutlet with salad");
+    defaultNonVeg.add("Chicken Sukka with ragi roti");
+    defaultNonVeg.add("Prawn Fry with quinoa upma");
+    defaultNonVeg.add("Mutton Keema with whole wheat paratha");
+    defaultNonVeg.add("Chicken Roast with small portion of rice");
+    defaultNonVeg.add("Egg Curry with millet dosa");
+    defaultNonVeg.add("Fish Tikka with salad");
+    defaultRecs.put("Non-Veg", defaultNonVeg);
     foodRecommendations.put("Other", defaultRecs);
     
-    // Calculate user-specific values if logged in
+    
     if(isLoggedIn) {
+        // Get appropriate food recommendations based on user type and preference
+        List<String> userFoodOptions = foodRecommendations
+            .getOrDefault(user.getDiabetesType(), defaultRecs)
+            .get(user.getFoodPreference());
+        
+        // Select 5 recommendations (rotating based on session counter)
+        int recommendationCounter = session.getAttribute("recommendationCounter") != null ? 
+            (Integer)session.getAttribute("recommendationCounter") : 0;
+        List<String> selectedRecommendations = new ArrayList<>();
+        
+        for (int i = 0; i < 5 && i < userFoodOptions.size(); i++) {
+            int index = (recommendationCounter + i) % userFoodOptions.size();
+            selectedRecommendations.add(userFoodOptions.get(index));
+        }
+        
+        // Update counter for next time
+        session.setAttribute("recommendationCounter", (recommendationCounter + 5) % userFoodOptions.size());
+        
+        // Join recommendations with line breaks for display
+        foodRecommendation = String.join("<br><br>• ", selectedRecommendations);
+        foodRecommendation = "• " + foodRecommendation;
+        
         // Calculate BMI and category
         double heightInMeters = user.getHeight() / 100;
         bmi = user.getWeight() / (heightInMeters * heightInMeters);
@@ -89,11 +364,6 @@
             bloodSugarAlertClass = "alert-secondary";
         }
         
-        // Get appropriate food recommendation
-        foodRecommendation = foodRecommendations
-            .getOrDefault(user.getDiabetesType(), defaultRecs)
-            .get(user.getFoodPreference());
-        
         // Activity recommendations based on profession and BMI
         if(user.getJobProfession() != null && user.getJobProfession().toLowerCase().contains("desk")) {
             activityRecommendation = "Desk job detected: Take a 5-minute walk every hour";
@@ -122,7 +392,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Food Recommendation app</title>
+    <title>Health care food recommendation engine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -381,6 +651,108 @@
                 width: 100%;
             }
         }
+        
+                /* Chatbot styles */
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+        }
+        
+        .chatbot-toggle button {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            width: 65px;
+            height: 65px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .chatbot-toggle button:hover {
+            transform: scale(1.05);
+        }
+        
+        #chatbotBox {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 350px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            z-index: 999;
+            display: none;
+            border-radius: var(--border-radius);
+            border: none;
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--light-text);
+            padding: 15px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+        
+        #chatBox {
+            height: 300px;
+            overflow-y: auto;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+        
+        .message {
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            max-width: 80%;
+            word-wrap: break-word;
+            clear: both;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .user-message {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            float: right;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .bot-message {
+            background: #e9ecef;
+            color: black;
+            float: left;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .input-group {
+            background: #fff;
+            border-top: 1px solid #eee;
+            padding: 15px;
+        }
+        
+        #userInput {
+            border-radius: 30px 0 0 30px;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+        }
+        
+        .send-btn {
+            border-radius: 0 30px 30px 0;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+        }
+        
+        
+        
     </style>
 </head>
 <body>
@@ -389,12 +761,12 @@
     <!-- Sidebar Navigation -->
     <div class="sidebar p-4">
         <div class="text-center mb-4">
-            <h4><i class="fas fa-utensils me-2"></i>Food Recommendation </h4>
+            <h4><i class="fas fa-utensils me-2"></i>Health care food recommendation engine </h4>
             <p class="small">Welcome back, <strong><%= user.getName() %></strong>!</p>
             <div class="progress progress-thin mb-2">
-                <div class="progress-bar bg-success" style="width: 75%"></div>
+                <div class="progress-bar bg-success" style="width: 78%"></div>
             </div>
-            <small>Profile completeness: 75%</small>
+            <small>Profile completeness: 78%</small>
         </div>
         
         <ul class="nav flex-column">
@@ -432,7 +804,11 @@
                 <p class="text-muted mb-0"><%= user.getDiabetesType() %> Diabetes Management</p>
             </div>
             <a href="logout" class="btn btn-outline-danger"><i class="fas fa-sign-out-alt me-1"></i> Logout</a>
-        </div>
+              </div>
+            
+
+
+      
 
         <!-- Dashboard Cards Row 1 -->
         <div class="row">
@@ -646,73 +1022,302 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Quick Recommendations Card -->
-            <div class="col-lg-6">
-                <div class="card dashboard-card">
-                    <div class="card-header bg-success text-white">
-                        <h5 class="card-title"><i class="fas fa-lightbulb me-2"></i>Personalized Recommendations</h5>
+			
+			<!-- Quick Recommendations Card -->
+<div class="col-lg-6">
+    <div class="card dashboard-card">
+        <div class="card-header bg-success text-white">
+            <h5 class="card-title"><i class="fas fa-lightbulb me-2"></i>Personalized Recommendations</h5>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-info">
+                <div class="d-flex align-items-start">
+                    <i class="fas fa-utensils mt-1 me-3"></i>
+                    <div>
+                    
+                        <h6>Today's Food Suggestion</h6>
+                        <p class="mb-1"><%= foodRecommendation %></p>
+                        <% if(user.getAllergies() != null && !user.getAllergies().isEmpty()) { 
+                            String[] allergyTips = {
+                                "Try ragi dosa - gluten-free and rich in calcium",
+                                "Jowar roti with methi sabzi would be great for you",
+                                "Steamed idli with coconut chutney is safe and light",
+                                "Pesarattu (green gram dosa) is excellent for your condition",
+                                "Try upma with vegetables - easy to digest"
+                            };
+                            java.util.Random rand = new java.util.Random();
+                            int tipIndex = rand.nextInt(allergyTips.length);
+                            
+                        %>
+                            <small class="text-muted">Allergy-friendly tip: <%= allergyTips[tipIndex] %></small>
+                            
+                        <% } %>
+                        
                     </div>
-                    <div class="card-body">
-                        <div class="alert alert-info">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-utensils mt-1 me-3"></i>
-                                <div>
-                                    <h6>Today's Food Suggestion</h6>
-                                    <p class="mb-1"><%= foodRecommendation %></p>
-                                    <% if(user.getAllergies() != null && !user.getAllergies().isEmpty()) { %>
-                                        <small class="text-muted">(Allergy note: Avoid <%= user.getAllergies() %>)</small>
-                                    <% } %>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            
+            
+            <div class="alert alert-warning">
+                <div class="d-flex align-items-start">
+                    <i class="fas fa-dumbbell mt-1 me-3"></i>
+                    <div>
+                        <h6>Activity Plan</h6>
+                        <% 
+                        String[] exercises;
+                        java.util.Random exerciseRand = new java.util.Random();
                         
-                        <div class="alert alert-warning">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-dumbbell mt-1 me-3"></i>
-                                <div>
-                                    <h6>Activity Plan</h6>
-                                    <p class="mb-1"><%= activityRecommendation %></p>
-                                    <% if(bmi >= 25) { %>
-                                        <small class="text-muted">Weight loss of 5-10% can significantly improve outcomes</small>
-                                    <% } %>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="alert alert-secondary">
-                            <div class="d-flex align-items-start">
-                                <i class="fas fa-book-medical mt-1 me-3"></i>
-                                <div>
-                                    <h6>Educational Tip</h6>
-                                    <% if(user.getDiabetesType().equals("Type 1")) { %>
-                                        <p class="mb-1">For Type 1 diabetes: Focus on carb counting and insulin timing</p>
-                                    <% } else if(user.getDiabetesType().equals("Type 2")) { %>
-                                        <p class="mb-1">For Type 2 diabetes: Consistent meal times help maintain stable blood sugar levels</p>
-                                    <% } else if(user.getDiabetesType().equals("Gestational")) { %>
-                                        <p class="mb-1">For Gestational diabetes: Regular monitoring is essential for both mother and baby's health</p>
-                                    <% } else { %>
-                                        <p class="mb-1">Regular monitoring and balanced diet are key for managing diabetes</p>
-                                    <% } %>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="text-center mt-3">
-                            <a href="foodRecommendations" class="btn btn-primary">
-                                <i class="fas fa-utensils me-2"></i>Get Detailed Food Plan
-                            </a>
-                        </div>
+                        if(bmi < 18.5) {
+                            exercises = new String[] {
+                                "Morning sun salutations (5 rounds)",
+                                "Brisk walking for 20 minutes",
+                                "Wall push-ups (10 reps, 3 sets)",
+                                "Gentle cycling for 15 minutes",
+                                "Chair squats (10 reps)"
+                            };
+                        } else if(bmi >= 25) {
+                            exercises = new String[] {
+                                "Brisk walking for 30 minutes",
+                                "Stair climbing for 10 minutes",
+                                "Standing side bends (15 each side)",
+                                "Seated leg lifts (10 reps each leg)",
+                                "Arm circles (30 seconds forward/backward)"
+                            };
+                        } else {
+                            exercises = new String[] {
+                                "30-minute walk in your neighborhood",
+                                "Basic yoga stretches (15 minutes)",
+                                "Gardening or household chores",
+                                "Play with children/pets actively",
+                                "Swimming or water exercises"
+                            };
+                        }
+                        int exerciseIndex = exerciseRand.nextInt(exercises.length);
+                        %>
+                        <p class="mb-1"><%= exercises[exerciseIndex] %></p>
+                        <% if(bmi >= 25) { %>
+                            <small class="text-muted">Weight loss tip: Replace white rice with millets like kambu or varagu twice weekly</small>
+                        <% } else if(bmi < 18.5) { %>
+                            <small class="text-muted">Try adding banana with curd rice as evening snack for healthy weight gain</small>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-primary">
+                <div class="d-flex align-items-start">
+                    <i class="fas fa-spa mt-1 me-3"></i>
+                    <div>
+                        <h6>Daily Wellness Tip</h6>
+                        <%
+                        String[] wellnessTips = {
+                        	    // Morning routines
+                        	    "Drink warm water with 1 tsp fenugreek (vendhayam) soaked overnight - controls blood sugar",
+                        	    "Chew 2-3 neem leaves with 1 tulsi leaf on empty stomach - boosts immunity",
+                        	    "Apply gingelly oil (nalla ennai) before bath - improves skin and joint health",
+                        	    
+                        	    // Food remedies
+                        	    "Have 1 tsp chyawanprash with warm milk - builds immunity (especially in winter)",
+                        	    "Drink buttermilk with crushed ginger and curry leaves after meals - aids digestion",
+                        	    "Soak 10 black raisins (unakkai) overnight, eat next morning - natural iron source",
+                        	    
+                        	    // Traditional practices
+                        	    "Walk barefoot on grass for 10 mins daily - grounds body and reduces stress",
+                        	    "Sleep on a kora grass mat - keeps body cool and improves sleep quality",
+                        	    "Use a wooden roller (uruttu kattai) for foot massage - improves circulation",
+
+                        	    
+                        	    
+                        	    
+                        	    
+                        	    
+                        	    
+                        	    
+                        	    
+                        	    
+                        	    
+                        	    
+                        	    
+                        	    // Seasonal tips
+                        	    "In summer, drink panagam (jaggery+water+pepper) - cools the body",
+                        	    "In monsoon, add pepper and turmeric to warm milk - prevents seasonal illnesses",
+                        	    "In winter, apply ghee inside nostrils - prevents dryness and infections",
+                        	    
+                        	    // Women's health
+                        	    "After childbirth, drink sukku coffee (dry ginger coffee) - aids recovery",
+                        	    "During periods, have sesame (ellu) ladoo - maintains iron levels",
+                        	    
+                        	    // Mental wellness
+                        	    "Listen to carnatic music for 15 mins daily - reduces anxiety",
+                        	    "Practice deep breathing facing east during sunrise - energizes mind",
+                        	    "Keep tulsi plant in northeast corner of home - purifies air and mind"
+                        	};
+                        java.util.Random wellnessRand = new java.util.Random();
+                        int wellnessIndex = wellnessRand.nextInt(wellnessTips.length);
+                        %>
+                        <p class="mb-0"><%= wellnessTips[wellnessIndex] %></p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+            
+            
+            
+            
+            
+        
+        
+                       <!-- Enhanced Chatbot Box -->
+    <div class="chatbot-toggle">
+        <button onclick="toggleChatbot()" class="btn btn-success rounded-circle">
+            <i class="fas fa-robot"></i>
+        </button>
+    </div>
+    
+    
+        <div id="chatbotBox" class="card">
+        <div class="chat-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="fas fa-robot me-2"></i> Healthcare Assistant</h5>
+            <button onclick="toggleChatbot()" class="btn btn-sm text-white">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div id="chatBox">
+            <!-- Messages will appear here -->
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="userInput" class="form-control" placeholder="Type your health question..." 
+                onkeypress="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()" class="btn send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Toggle chatbot visibility
+        function toggleChatbot() {
+            const chatbotBox = document.getElementById("chatbotBox");
+            if (chatbotBox.style.display === "none") {
+                chatbotBox.style.display = "block";
+                // Initialize with welcome message when first opened
+                if (document.getElementById("chatBox").children.length === 0) { <%= user.getName() %>
+                    addBotMessage("Hello <%= user.getName()%>! 👋 How can I assist you with your health today?");
+                }
+            } else {
+                chatbotBox.style.display = "none";
+            }
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById("userInput");
+            const message = userInput.value.trim();
+            
+            if (message === "") return;
+            
+            // Add user message to chat
+            addUserMessage(message);
+            userInput.value = "";
+            
+            // Process and show bot response after a short delay
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addBotMessage(response);
+            }, 500);
+        }
+
+        function addUserMessage(message) {
+            const chatBox = document.getElementById("chatBox");
+            const messageElement = document.createElement("div");
+            messageElement.className = "message user-message";
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function addBotMessage(message) {
+            const chatBox = document.getElementById("chatBox");
+            const messageElement = document.createElement("div");
+            messageElement.className = "message bot-message";
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function getBotResponse(message) {
+            message = message.toLowerCase();
+
+            if (message.includes("hi") || message.includes("hello")) {
+                return "Hello there! How can I help you with your health today?";
+            }
+            else if (message.includes("bmi")) {
+                return "BMI (Body Mass Index) is a measure of body fat based on height and weight. You can calculate it using our BMI calculator tool!";
+            }
+            else if (message.includes("diet")) {
+                return "A balanced diet should include:\n- Fruits & vegetables\n- Whole grains\n- Lean proteins\n- Healthy fats\n- Plenty of water";
+            }
+            else if (message.includes("exercise") || message.includes("workout")) {
+                return "For good health, aim for:\n- 150 mins moderate exercise weekly\n- Strength training 2x/week\n- Stretching daily\n- Less sitting time";
+            }
+            else if (message.includes("weight loss")) {
+                return "Healthy weight loss tips:\n1. Eat more whole foods\n2. Control portion sizes\n3. Stay hydrated\n4. Exercise regularly\n5. Get enough sleep";
+            }
+            else if (message.includes("mental health")) {
+                return "Mental health is crucial! Try:\n- Daily mindfulness\n- Regular exercise\n- Social connections\n- Quality sleep\n- Professional help if needed";
+            }
+            else if (message.includes("back pain")) {
+                return "For back pain relief:\n- Practice good posture\n- Take regular breaks from sitting\n- Do gentle stretching\n- Strengthen core muscles\n- Consider ergonomic furniture";
+            }
+            else if (message.includes("eye strain")) {
+                return "To reduce eye strain:\n- Follow the 20-20-20 rule\n- Adjust monitor brightness\n- Use blue light filters\n- Ensure proper lighting\n- Keep screens at arm's length";
+            }
+            else {
+                return "I'm not sure I understand. You can ask me about:\n- BMI\n- Diet\n- Exercise\n- Weight loss\n- Mental health\n- Back pain\n- Eye strain";
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set BMI marker position
+        window.onload = function() {
+            <% if(isLoggedIn) { %>
+                var bmiMarker = document.getElementById('bmiMarker');
+                // Position based on BMI (18.5, 25, 30 are the thresholds)
+                // Calculate position percentage
+                var bmiValue = <%= bmi %>;
+                var position = 0;
+                
+                if(bmiValue < 18.5) {
+                    position = (bmiValue / 18.5) * 25;
+                } else if(bmiValue < 25) {
+                    position = 25 + ((bmiValue - 18.5) / 6.5) * 25;
+                } else if(bmiValue < 30) {
+                    position = 50 + ((bmiValue - 25) / 5) * 25;
+                } else {
+                    position = 75 + Math.min(((bmiValue - 30) / 10) * 25, 25);
+                }
+                
+                // Ensure position is within bounds
+                position = Math.max(0, Math.min(100, position));
+                bmiMarker.style.left = position + '%';
+            <% } %>
+        };
+    </script>
         
 
         
         <!-- Footer -->
         <footer class="mt-5 mb-3 text-center text-muted">
-            <p>&copy; 2025 DiabeticCare. All rights reserved.</p>
+            <p>&copy; 2025 Health care food recommendation engine. All rights reserved.</p>
         </footer>
     </div>
     <% } else { %>
@@ -751,7 +1356,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">Manage Diabetes with Smart Food Choices</h1>
+                    <h1 class="display-4 fw-bold mb-4">HEALTH CARE FOOD RECOMMENDATION ENGINE</h1>
                     <p class="lead mb-4">Get personalized meal recommendations based on your diabetes type, preferences, and health metrics.</p>
                     <div class="mt-5">
                         <a href="register.jsp" class="btn btn-light btn-lg me-3">Get Started</a>
@@ -953,13 +1558,135 @@
             <a href="register.jsp" class="btn btn-light btn-lg">Sign Up Now - It's Free!</a>
         </div>
     </section>
+    
+  <!--  CHATBOT -->
+  
+         <!-- Enhanced Chatbot Box -->
+    <div class="chatbot-toggle">
+        <button onclick="toggleChatbot()" class="btn btn-success rounded-circle">
+            <i class="fas fa-robot"></i>
+        </button>
+    </div>
+    
+    
+        <div id="chatbotBox" class="card">
+        <div class="chat-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="fas fa-robot me-2"></i> Healthcare Assistant</h5>
+            <button onclick="toggleChatbot()" class="btn btn-sm text-white">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div id="chatBox">
+            <!-- Messages will appear here -->
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="userInput" class="form-control" placeholder="Type your health question..." 
+                onkeypress="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()" class="btn send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Toggle chatbot visibility
+        function toggleChatbot() {
+            const chatbotBox = document.getElementById("chatbotBox");
+            if (chatbotBox.style.display === "none") {
+                chatbotBox.style.display = "block";
+                // Initialize with welcome message when first opened
+                if (document.getElementById("chatBox").children.length === 0) {
+                    addBotMessage("Hello! 👋 How can I assist you with your health today?");
+<%--                     addBotMessage("Hello <%= user.getName() %>! 👋 How can I assist you with your health today?"); --%>
+                }
+            } else {
+                chatbotBox.style.display = "none";
+            }
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById("userInput");
+            const message = userInput.value.trim();
+            
+            if (message === "") return;
+            
+            // Add user message to chat
+            addUserMessage(message);
+            userInput.value = "";
+            
+            // Process and show bot response after a short delay
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addBotMessage(response);
+            }, 500);
+        }
+
+        function addUserMessage(message) {
+            const chatBox = document.getElementById("chatBox");
+            const messageElement = document.createElement("div");
+            messageElement.className = "message user-message";
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function addBotMessage(message) {
+            const chatBox = document.getElementById("chatBox");
+            const messageElement = document.createElement("div");
+            messageElement.className = "message bot-message";
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function getBotResponse(message) {
+            message = message.toLowerCase();
+
+            if (message.includes("hi") || message.includes("hello")) {
+                return "Hello there! How can I help you with your health today?";
+            }
+            else if (message.includes("bmi")) {
+                return "BMI (Body Mass Index) is a measure of body fat based on height and weight. You can calculate it using our BMI calculator tool!";
+            }
+            else if (message.includes("diet")) {
+                return "A balanced diet should include:\n- Fruits & vegetables\n- Whole grains\n- Lean proteins\n- Healthy fats\n- Plenty of water";
+            }
+            else if (message.includes("exercise") || message.includes("workout")) {
+                return "For good health, aim for:\n- 150 mins moderate exercise weekly\n- Strength training 2x/week\n- Stretching daily\n- Less sitting time";
+            }
+            else if (message.includes("weight loss")) {
+                return "Healthy weight loss tips:\n1. Eat more whole foods\n2. Control portion sizes\n3. Stay hydrated\n4. Exercise regularly\n5. Get enough sleep";
+            }
+            else if (message.includes("mental health")) {
+                return "Mental health is crucial! Try:\n- Daily mindfulness\n- Regular exercise\n- Social connections\n- Quality sleep\n- Professional help if needed";
+            }
+            else if (message.includes("back pain")) {
+                return "For back pain relief:\n- Practice good posture\n- Take regular breaks from sitting\n- Do gentle stretching\n- Strengthen core muscles\n- Consider ergonomic furniture";
+            }
+            else if (message.includes("eye strain")) {
+                return "To reduce eye strain:\n- Follow the 20-20-20 rule\n- Adjust monitor brightness\n- Use blue light filters\n- Ensure proper lighting\n- Keep screens at arm's length";
+            }
+            else {
+                return "I'm not sure I understand. You can ask me about:\n- BMI\n- Diet\n- Exercise\n- Weight loss\n- Mental health\n- Back pain\n- Eye strain";
+            }
+        }
+    </script>
+  
+  
+  
+  
+  
+    
+    
 
     <!-- Footer -->
     <footer class="py-4 bg-dark text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5><i class="fas fa-utensils me-2"></i>DiabeticCare</h5>
+                    <h5><i class="fas fa-utensils me-2"></i>Health care food recommendation engine</h5>
                     <p>Helping you manage diabetes through smart food choices.</p>
                 </div>
                 <div class="col-md-4">
@@ -973,13 +1700,13 @@
                 </div>
                 <div class="col-md-4">
                     <h5>Contact Us</h5>
-                    <p><i class="fas fa-envelope me-2"></i>support@diabeticcare.com</p>
+                    <p><i class="fas fa-envelope me-2"></i>mbrindha1200@gmail.com</p>
 
                 </div>
             </div>
             <hr class="my-4">
             <div class="text-center">
-                <p class="mb-0">&copy; 2025 DiabeticCare. All rights reserved.</p>
+                <p class="mb-0">&copy; 2025 Healthcare food recommendation engine. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1015,3 +1742,4 @@
     </script>
 </body>
 </html>
+

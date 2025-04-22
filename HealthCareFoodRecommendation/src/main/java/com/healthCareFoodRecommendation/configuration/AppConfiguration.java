@@ -29,7 +29,7 @@ public class AppConfiguration {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/healthcaremanagement");
         dataSource.setUsername("root");
-        dataSource.setPassword("Imjeeva@888");
+        dataSource.setPassword("Brindha@1200");
         return dataSource;
     }
 

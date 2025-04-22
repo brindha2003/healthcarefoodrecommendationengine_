@@ -286,7 +286,7 @@
             <div class="progress progress-thin mb-2">
                 <div class="progress-bar bg-success" style="width: 75%"></div>
             </div>
-            <small>Profile completeness: 75%</small>
+            <small>Profile completeness: 99%</small>
         </div>
 
         <ul class="nav flex-column">

@@ -227,9 +227,9 @@
             <h4><i class="fas fa-utensils me-2"></i>DiabeticCare</h4>
             <p class="small">Welcome back, <strong><%=user.getName() %></strong>!</p>
             <div class="progress progress-thin mb-2" style="height: 6px;">
-                <div class="progress-bar bg-success" style="width: 75%"></div>
+                <div class="progress-bar bg-success" style="width: 80%"></div>
             </div>
-            <small>Profile completeness: 75%</small>
+            <small>Profile completeness: 80%</small>
         </div>
         
         <ul class="nav flex-column">
@@ -267,11 +267,7 @@
                     <h2><i class="fas fa-utensils me-2"></i> Personalized Food Recommendations</h2>
                     <p class="text-muted">Based on your diabetic profile and preferences</p>
                 </div>
-                <div class="col-md-4 text-md-end">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">
-                        <i class="fas fa-filter"></i> Advanced Filters
-                    </button>
-                </div>
+                
             </div>
 
             <!-- Filter Section -->
@@ -376,15 +372,6 @@
                                         <small>Contains : ${food.allergens}</small>
                                     </div>
                                 </c:if>
-                                
-                                <div class="action-buttons">
-                                    <button onclick="saveFoodItem(${food.id})" class="btn btn-outline-primary action-button">
-                                        <i class="far fa-bookmark me-1"></i> Save
-                                    </button>
-                                    <button onclick="addToMealPlan(${food.id})" class="btn btn-primary action-button">
-                                        <i class="fas fa-plus me-1"></i> Add to Plan
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -399,110 +386,10 @@
                     <p class="text-muted">Try adjusting your filters or check back later for more recommendations.</p>
                 </div>
             </c:if>
-
-            <!-- Pagination -->
-            <nav aria-label="Page navigation" class="mt-4">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
         </div>
     </div>
 
-    <!-- Filter Modal -->
-    <div class="modal fade" id="filterModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="fas fa-filter me-2"></i>Advanced Food Filters</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Food Type</label>
-                            <select class="form-select" name="advFoodType">
-                                <option>All Types</option>
-                                <option>Vegetarian</option>
-                                <option>Non-Vegetarian</option>
-                                <option>Vegan</option>
-                                <option>Pescatarian</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Meal Type</label>
-                            <select class="form-select" name="mealType">
-                                <option>All Meals</option>
-                                <option>Breakfast</option>
-                                <option>Lunch</option>
-                                <option>Dinner</option>
-                                <option>Snack</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Glycemic Index Range</label>
-                            <div class="input-group">
-                                <input type="number" class="form-control" placeholder="Min" min="0" max="100">
-                                <span class="input-group-text">to</span>
-                                <input type="number" class="form-control" placeholder="Max" min="0" max="100">
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Carbohydrates (g)</label>
-                            <div class="input-group">
-                                <input type="number" class="form-control" placeholder="Min" min="0">
-                                <span class="input-group-text">to</span>
-                                <input type="number" class="form-control" placeholder="Max" min="0">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-12 mb-3">
-                            <label class="form-label">Exclude Allergens</label>
-                            <div class="d-flex flex-wrap gap-2">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="allergenGluten">
-                                    <label class="form-check-label" for="allergenGluten">Gluten</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="allergenNuts">
-                                    <label class="form-check-label" for="allergenNuts">Nuts</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="allergenDairy">
-                                    <label class="form-check-label" for="allergenDairy">Dairy</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="allergenEggs">
-                                    <label class="form-check-label" for="allergenEggs">Eggs</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="allergenSoy">
-                                    <label class="form-check-label" for="allergenSoy">Soy</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Apply Filters</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -517,89 +404,6 @@
                 });
             });
         });
-        
-        // Function to handle saving food items
-        function saveFoodItem(foodId) {
-            // Placeholder function until implementation
-            console.log('Saving food item with ID: ' + foodId);
-            
-            // Show temporary success message
-            const successToast = document.createElement('div');
-            successToast.className = 'position-fixed bottom-0 end-0 p-3';
-            successToast.style.zIndex = '11';
-            successToast.innerHTML = `
-                <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header bg-success text-white">
-                        <strong class="me-auto"><i class="fas fa-check-circle me-2"></i>Success</strong>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-                        Food item saved to your favorites!
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(successToast);
-            
-            // Remove toast after 3 seconds
-            setTimeout(() => {
-                successToast.remove();
-            }, 3000);
-        }
-        
-        // Function to handle adding food to meal plan
-        function addToMealPlan(foodId) {
-            // Placeholder function until implementation
-            console.log('Adding food with ID: ' + foodId + ' to meal plan');
-            
-            // Show temporary dialog for meal selection
-            const modal = new bootstrap.Modal(document.createElement('div'));
-            modal._element.className = 'modal fade';
-            modal._element.innerHTML = `
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title"><i class="fas fa-calendar-plus me-2"></i>Add to Meal Plan</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Select Day</label>
-                                <select class="form-select">
-                                    <option>Today</option>
-                                    <option>Tomorrow</option>
-                                    <option>In 2 days</option>
-                                    <option>Custom date...</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Select Meal</label>
-                                <select class="form-select">
-                                    <option>Breakfast</option>
-                                    <option>Lunch</option>
-                                    <option>Dinner</option>
-                                    <option>Snack</option>
-                                </select>
-                            </div>
-                            <div class="alert alert-info">
-                                <i class="fas fa-info-circle me-2"></i>
-                                Meal planning feature coming soon!
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save to Plan</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(modal._element);
-            modal.show();
-            
-            // Remove modal from DOM after it's hidden
-            modal._element.addEventListener('hidden.bs.modal', function() {
-                modal._element.remove();
-            });
-        }
     </script>
 </body>
 </html>

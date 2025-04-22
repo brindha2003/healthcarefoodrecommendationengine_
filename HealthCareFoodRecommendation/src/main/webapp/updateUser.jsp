@@ -183,9 +183,9 @@
         <div class="text-center mb-4">
             <h4><i class="fas fa-utensils me-2"></i>Food Recommendation</h4>
             <div class="progress progress-thin mb-2">
-                <div class="progress-bar bg-success" style="width: 75%"></div>
+                <div class="progress-bar bg-success" style="width: 100%"></div>
             </div>
-            <small>Profile completeness: 75%</small>
+            <small>Profile completeness: 100%</small>
         </div>
 
         <ul class="nav flex-column">
@@ -204,9 +204,7 @@
             <li class="nav-item">
                 <a class="nav-link active" href="updateProfile.jsp"><i class="fas fa-user-edit me-2"></i>Update Profile</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="settings.jsp"><i class="fas fa-cog me-2"></i>Settings</a>
-            </li>
+            
             <li class="nav-item">
                 <a class="nav-link" href="logout.jsp"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
             </li>

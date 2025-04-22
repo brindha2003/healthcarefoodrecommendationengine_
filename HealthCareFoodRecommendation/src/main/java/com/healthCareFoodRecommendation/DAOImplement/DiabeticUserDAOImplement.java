@@ -32,7 +32,7 @@ public class DiabeticUserDAOImplement implements DiabeticUserDAO {
 	     this.sf = sf;
 	     try {
 	         Class.forName("com.mysql.cj.jdbc.Driver");
-	         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/healthcaremanagement", "root", "Imjeeva@888");
+	         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/healthcaremanagement", "root", "Brindha@1200");
 	     } catch (Exception e) {
 	         e.printStackTrace();
 	     }
