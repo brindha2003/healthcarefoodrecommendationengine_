@@ -56,7 +56,51 @@
     type1Veg.add("Paneer Tikka with multigrain roti (35g carbs) + insulin dose");
     type1Veg.add("Vegetable Stir Fry with brown rice (40g carbs) + insulin dose");
     type1Veg.add("Dal Makhani with bajra roti (35g carbs) + insulin dose");
-    type1Recs.put("Veg", type1Veg);
+ // Breakfast Items
+    type1Veg.add("Kambu (Pearl Millet) Koozh with buttermilk (35g carbs) + insulin dose");
+    type1Veg.add("Ragi Kali with keerai poriyal (30g carbs) + insulin dose");
+    type1Veg.add("Thinai (Foxtail Millet) Pongal with sambar (40g carbs) + insulin dose");
+    type1Veg.add("Kuthiraivali (Barnyard Millet) Upma with mint chutney (35g carbs) + insulin dose");
+    type1Veg.add("Varagu (Kodo Millet) Idiyappam with vegetable kurma (45g carbs) + insulin dose");
+
+    // Rice Dishes
+    type1Veg.add("Mappillai Samba Rice with paruppu rasam (40g carbs) + insulin dose");
+    type1Veg.add("Karuppu Kavuni (Black Rice) with mor kuzhambu (35g carbs) + insulin dose");
+    type1Veg.add("Thooyamalli Rice with vendakkai curry (40g carbs) + insulin dose");
+    type1Veg.add("Poongul Arisi (Red Rice) with kathrikai gotsu (45g carbs) + insulin dose");
+    type1Veg.add("Samba Wheat Kanji with ulli theeyal (30g carbs) + insulin dose");
+
+    // Tiffin Items
+    type1Veg.add("Kambu Dosa with nattu sakkarai podi (35g carbs) + insulin dose");
+    type1Veg.add("Kuthiraivali Adai with avial (40g carbs) + insulin dose");
+    type1Veg.add("Ragi Roti with kollu kuzhambu (30g carbs) + insulin dose");
+    type1Veg.add("Samai (Little Millet) Puttu with kadala curry (45g carbs) + insulin dose");
+    type1Veg.add("Kuzhi Paniyaram with coconut chutney (40g carbs) + insulin dose");
+
+    // Traditional Specials
+    type1Veg.add("Keerai Masiyal with small portion of kambu sadam (35g carbs) + insulin dose");
+    type1Veg.add("Pulikkuzhambu with thinai rice (40g carbs) + insulin dose");
+    type1Veg.add("Arachuvitta Sambar with varagu arisi (45g carbs) + insulin dose");
+    type1Veg.add("Kothavarangai Paruppu Usili with millet rice (30g carbs) + insulin dose");
+    type1Veg.add("Murungakkai Podi Curry with jowar roti (35g carbs) + insulin dose");
+
+    // Light Meals
+    type1Veg.add("Koozh Vadai (made with kambu flour) with green chutney (30g carbs) + insulin dose");
+    type1Veg.add("Pasi Paruppu Kanji with garlic roast (25g carbs) + insulin dose");
+    type1Veg.add("Mochai Kottai Sundal (25g carbs) + insulin dose");
+    type1Veg.add("Kambu Soup with vegetables (20g carbs) + insulin dose");
+    type1Veg.add("Sathukudi (Sweet Lime) and Groundnut Salad (15g carbs) + insulin dose");
+
+    // Dinner Options
+    type1Veg.add("Kollu Rasam with small portion of millet rice (35g carbs) + insulin dose");
+    type1Veg.add("Vendakkai Morekozhambu with thinai rice (40g carbs) + insulin dose");
+    type1Veg.add("Poondu Kuzhambu with kambu roti (35g carbs) + insulin dose");
+    type1Veg.add("Paruppu Podi with gingelly oil + small portion of red rice (30g carbs) + insulin dose");
+    type1Veg.add("Kathrikai Gothsu with ragi dosa (40g carbs) + insulin dose");
+
+       type1Recs.put("Veg", type1Veg);
+
+ 
     
     List<String> type1NonVeg = new ArrayList<>();
     type1NonVeg.add("Grilled fish with millet rice (30g carbs) + insulin dose as directed");
@@ -89,6 +133,56 @@
     type1NonVeg.add("Chicken Roast with small portion of rice (40g carbs) + insulin dose");
     type1NonVeg.add("Egg Curry with millet dosa (35g carbs) + insulin dose");
     type1NonVeg.add("Fish Tikka with salad (25g carbs) + insulin dose");
+    type1NonVeg.add("Meen Kuzhambu (Fish Curry) with small portion of kambu rice (35g carbs) + insulin dose");
+    type1NonVeg.add("Nethili (Anchovy) Fry with millet kanji (25g carbs) + insulin dose");
+    type1NonVeg.add("Karaikudi Chicken Chettinad with varagu rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Mutton Chukka with ragi roti (30g carbs) + insulin dose");
+    type1NonVeg.add("Koonthal (Squid) Roast with thinai upma (35g carbs) + insulin dose");
+    type1NonVeg.add("Ayirai Meen (Catfish) Puli Curry with small rice portion (30g carbs) + insulin dose");
+    type1NonVeg.add("Kadalal (Mussels) Moilee with appam (45g carbs) + insulin dose");
+    type1NonVeg.add("Naatu Kozhi (Country Chicken) Rasam with millet rice (30g carbs) + insulin dose");
+    type1NonVeg.add("Eral (Prawn) Thokku with jowar roti (35g carbs) + insulin dose");
+    type1NonVeg.add("Kaadai (Quail) Fry with kuthiraivali sadam (30g carbs) + insulin dose");
+    type1NonVeg.add("Meen (Fish) Biryani with raita (50g carbs) + insulin dose");
+    type1NonVeg.add("Kozhi (Chicken) Milagu Varuval with bajra roti (35g carbs) + insulin dose");
+    type1NonVeg.add("Aatu Kari (Mutton) Kola Urundai with millet soup (30g carbs) + insulin dose");
+    type1NonVeg.add("Sura Puttu (Shark Fin) Curry with small rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Naatu Kozhi (Country Chicken) Sukka with ragi dosa (35g carbs) + insulin dose");
+    type1NonVeg.add("Kanava (Cuttlefish) Varuval with quinoa (30g carbs) + insulin dose");
+    type1NonVeg.add("Kadal (Mussel) Curry with kambu koozh (35g carbs) + insulin dose");
+    type1NonVeg.add("Kozhi (Chicken) Nirachaathu with appam (45g carbs) + insulin dose");
+    type1NonVeg.add("Eral (Prawn) Podi Curry with samai rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Meen (Fish) Mappas with whole wheat appam (40g carbs) + insulin dose");
+    type1NonVeg.add("Naatu Kozhi (Country Chicken) Kuzhambu with millet rice (35g carbs) + insulin dose");
+    type1NonVeg.add("Kaalaa (Crab) Masala with thinai roti (30g carbs) + insulin dose");
+    type1NonVeg.add("Kozhi (Chicken) 65 with small portion rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Aatu Kari (Mutton) Chukka with ragi mudde (25g carbs) + insulin dose");
+    type1NonVeg.add("Nandu (Crab) Rasam with quinoa (30g carbs) + insulin dose");
+    type1NonVeg.add("Kozhi (Chicken) Varuval with kambu dosa (35g carbs) + insulin dose");
+    type1NonVeg.add("Eral (Prawn) Roast with small portion rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Meen (Fish) Cutlet with salad (25g carbs) + insulin dose");
+    type1NonVeg.add("Naatu Kozhi (Country Chicken) Biryani with onion raita (50g carbs) + insulin dose");
+    type1NonVeg.add("Kaadai (Quail) Peralan with millet rice (35g carbs) + insulin dose");
+    type1NonVeg.add("Koonthal (Squid) Chukka with bajra roti (30g carbs) + insulin dose");
+    type1NonVeg.add("Kozhi (Chicken) Korma with whole wheat appam (45g carbs) + insulin dose");
+    type1NonVeg.add("Aatu Kari (Mutton) Biryani with cucumber raita (55g carbs) + insulin dose");
+    type1NonVeg.add("Meen (Fish) Molee with small portion rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Eral (Prawn) Kuzhambu with samai rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Kozhi (Chicken) Varutharachathu with ragi dosa (35g carbs) + insulin dose");
+    type1NonVeg.add("Nandu (Crab) Varuval with kuthiraivali rice (30g carbs) + insulin dose");
+    type1NonVeg.add("Kaalaa (Crab) Curry with small appam (45g carbs) + insulin dose");
+    type1NonVeg.add("Naatu Kozhi (Country Chicken) Kurma with millet roti (35g carbs) + insulin dose");
+    type1NonVeg.add("Meen (Fish) Puttu with coconut milk (35g carbs) + insulin dose");
+    type1NonVeg.add("Kozhi (Chicken) Chettinad with varagu rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Aatu Kari (Mutton) Kheema with whole wheat parotta (45g carbs) + insulin dose");
+    type1NonVeg.add("Eral (Prawn) Roast with quinoa (30g carbs) + insulin dose");
+    type1NonVeg.add("Koonthal (Squid) Masala with thinai dosa (35g carbs) + insulin dose");
+    type1NonVeg.add("Meen (Fish) Varuval with keerai rice (30g carbs) + insulin dose");
+    type1NonVeg.add("Kozhi (Chicken) Pepper Fry with small portion rice (40g carbs) + insulin dose");
+    type1NonVeg.add("Naatu Kozhi (Country Chicken) Soup with millet bread (25g carbs) + insulin dose");
+    type1NonVeg.add("Kaadai (Quail) Roast with ragi roti (30g carbs) + insulin dose");
+    type1NonVeg.add("Nandu (Crab) Peralan with kambu rice (35g carbs) + insulin dose");
+    type1NonVeg.add("Meen (Fish) Curry with small appam (45g carbs) + insulin dose");
     type1Recs.put("Non-Veg", type1NonVeg);
     foodRecommendations.put("Type 1", type1Recs);
     
@@ -295,6 +389,7 @@
     defaultNonVeg.add("Chicken Roast with small portion of rice");
     defaultNonVeg.add("Egg Curry with millet dosa");
     defaultNonVeg.add("Fish Tikka with salad");
+    
     defaultRecs.put("Non-Veg", defaultNonVeg);
     foodRecommendations.put("Other", defaultRecs);
     
@@ -1034,75 +1129,189 @@
                 <div class="d-flex align-items-start">
                     <i class="fas fa-utensils mt-1 me-3"></i>
                     <div>
-                    
                         <h6>Today's Food Suggestion</h6>
                         <p class="mb-1"><%= foodRecommendation %></p>
-                        <% if(user.getAllergies() != null && !user.getAllergies().isEmpty()) { 
-                            String[] allergyTips = {
-                                "Try ragi dosa - gluten-free and rich in calcium",
-                                "Jowar roti with methi sabzi would be great for you",
-                                "Steamed idli with coconut chutney is safe and light",
-                                "Pesarattu (green gram dosa) is excellent for your condition",
-                                "Try upma with vegetables - easy to digest"
-                            };
-                            java.util.Random rand = new java.util.Random();
-                            int tipIndex = rand.nextInt(allergyTips.length);
-                            
-                        %>
-                            <small class="text-muted">Allergy-friendly tip: <%= allergyTips[tipIndex] %></small>
-                            
+<% if(user.getAllergies() != null && !user.getAllergies().isEmpty()) { 
+    String[] allergyTips = {
+        // Breakfast
+        "Ragi dosa with mint chutney - gluten-free & low GI",
+        "Moong dal chilla with coriander chutney - high protein",
+        "Jowar roti with lauki (bottle gourd) sabzi - light & nutritious",
+        "Poha (flattened rice) with peanuts & veggies - easy to digest",
+        "Quinoa upma with spinach - protein-rich & gluten-free",
+        "Besan (chickpea flour) cheela with pudina chutney - diabetic-friendly",
+        "Steamed dhokla (made with chana dal) - probiotic & light",
+        "Samak rice idli - gluten-free alternative to rice idli",
+        
+        // Lunch/Dinner
+        "Bajra roti with methi dal - high fiber & controls sugar",
+        "Karela (bitter gourd) stir-fry with jowar bhakri - natural blood sugar regulator",
+        "Palak paneer with quinoa roti - low-carb & iron-rich",
+        "Lauki chana dal curry with brown rice - balanced meal",
+        "Grilled fish with sautéed vegetables - lean protein & omega-3",
+        "Sprouted moong salad with lemon & flaxseeds - high protein & fiber",
+        "Tinda (apple gourd) sabzi with bajra roti - low-calorie & nutritious",
+        "Dudhi (bottle gourd) thepla with curd - light & gluten-free",
+        "Masoor dal soup with roasted makhana - diabetic-friendly snack",
+        
+        // Snacks
+        "Roasted chana (black chickpeas) - crunchy & protein-packed",
+        "Makhana (fox nuts) with cinnamon - low-calorie & blood sugar-friendly",
+        "Cucumber & carrot sticks with hummus - fiber-rich snack",
+        "Handful of almonds & walnuts - healthy fats for sugar control",
+        "Greek yogurt with chia seeds - probiotic & low sugar",
+        "Avocado chat with black salt - healthy fats & no carbs",
+        
+        // Light Meals
+        "Vegetable stew with coconut milk (use less coconut) - creamy & safe",
+        "Masala oats with veggies - gluten-free & slow-digesting",
+        "Sambar with drumstick & bottle gourd - diabetic-friendly lentils",
+        "Grilled chicken with sautéed mushrooms - lean protein option",
+        
+        // Desserts (Diabetic-safe)
+        "Dates & nuts ladoo (no sugar added) - natural sweetness",
+        "Ragi malt with almond milk - calcium-rich & sugar-free",
+        "Chia seed pudding with berries - antioxidant-rich dessert",
+        "Coconut & jaggery-free ladoo (made with sesame seeds) - healthy fats",
+        
+        // Extra Tips
+        "Drink methi (fenugreek) water daily - helps regulate blood sugar",
+        "Replace sugar with stevia in beverages - zero-calorie sweetener",
+        "Opt for small, frequent meals - prevents sugar spikes"
+    };
+    java.util.Random rand = new java.util.Random();
+    int tipIndex = rand.nextInt(allergyTips.length);
+%>                            <small class="text-muted">Allergy-friendly tip: <%= allergyTips[tipIndex] %></small>
                         <% } %>
-                        
                     </div>
                 </div>
             </div>
             
+            <!-- Add this new button below the recommendations -->
+            <div class="text-center mt-3">
+                <a href="filterFoods.jsp" class="btn btn-primary">
+                    <i class="fas fa-filter me-2"></i>Filter Your Foods
+                </a>
+            </div>
             
             <div class="alert alert-warning">
-                <div class="d-flex align-items-start">
-                    <i class="fas fa-dumbbell mt-1 me-3"></i>
-                    <div>
-                        <h6>Activity Plan</h6>
-                        <% 
-                        String[] exercises;
-                        java.util.Random exerciseRand = new java.util.Random();
-                        
-                        if(bmi < 18.5) {
-                            exercises = new String[] {
-                                "Morning sun salutations (5 rounds)",
-                                "Brisk walking for 20 minutes",
-                                "Wall push-ups (10 reps, 3 sets)",
-                                "Gentle cycling for 15 minutes",
-                                "Chair squats (10 reps)"
-                            };
-                        } else if(bmi >= 25) {
-                            exercises = new String[] {
-                                "Brisk walking for 30 minutes",
-                                "Stair climbing for 10 minutes",
-                                "Standing side bends (15 each side)",
-                                "Seated leg lifts (10 reps each leg)",
-                                "Arm circles (30 seconds forward/backward)"
-                            };
-                        } else {
-                            exercises = new String[] {
-                                "30-minute walk in your neighborhood",
-                                "Basic yoga stretches (15 minutes)",
-                                "Gardening or household chores",
-                                "Play with children/pets actively",
-                                "Swimming or water exercises"
-                            };
-                        }
-                        int exerciseIndex = exerciseRand.nextInt(exercises.length);
-                        %>
-                        <p class="mb-1"><%= exercises[exerciseIndex] %></p>
-                        <% if(bmi >= 25) { %>
-                            <small class="text-muted">Weight loss tip: Replace white rice with millets like kambu or varagu twice weekly</small>
-                        <% } else if(bmi < 18.5) { %>
-                            <small class="text-muted">Try adding banana with curd rice as evening snack for healthy weight gain</small>
-                        <% } %>
-                    </div>
-                </div>
+                <!-- Rest of your existing content -->
+                <!-- ... -->
             </div>
+            <!-- ... -->
+        </div>
+    </div>
+</div>
+			
+            
+            <div class="alert alert-warning">
+    <div class="d-flex align-items-start">
+        <i class="fas fa-dumbbell mt-1 me-3"></i>
+        <div>
+            <h6>Activity Plan</h6>
+            <% 
+            String[] exercises;
+            java.util.Random exerciseRand = new java.util.Random();
+            
+            if(bmi < 18.5) {
+                exercises = new String[] {
+                    // Strength & Weight Gain Focus
+                    "Morning sun salutations (5 rounds)",
+                    "Brisk walking for 20 minutes",
+                    "Wall push-ups (10 reps, 3 sets)",
+                    "Gentle cycling for 15 minutes",
+                    "Chair squats (10 reps, 3 sets)",
+                    "Resistance band pulls (12 reps, 2 sets)",
+                    "Dumbbell curls (light weights, 8 reps)",
+                    "Yoga: Virabhadrasana (Warrior pose) - 30 sec each side",
+                    "Leg raises (lying down, 10 reps)",
+                    "Bridge pose (hold for 15 seconds, 3 reps)",
+                    "Climbing stairs slowly (5 minutes)",
+                    "Standing calf raises (15 reps)",
+                    "Seated row with resistance band (10 reps)",
+                    "Plank (modified on knees, 20 seconds)",
+                    "Pilates roll-ups (8 reps)",
+
+                    // Lifestyle Mods
+                    "Carry groceries to build arm strength",
+                    "Park farther away to add walking steps",
+                    "Take the stairs instead of elevators",
+                    "Play badminton or table tennis for fun activity",
+                    "Dance to 3 favorite songs daily"
+                };
+            } else if(bmi >= 25) {
+                exercises = new String[] {
+                    // Weight Loss Focus
+                    "Brisk walking for 30 minutes",
+                    "Stair climbing for 10 minutes",
+                    "Standing side bends (15 each side)",
+                    "Seated leg lifts (10 reps each leg)",
+                    "Arm circles (30 seconds forward/backward)",
+                    "Jumping jacks (1 minute, 3 sets)",
+                    "High knees (30 seconds, 2 sets)",
+                    "Butt kicks (30 seconds, 2 sets)",
+                    "Wall sit (hold for 30 seconds)",
+                    "Standing oblique crunches (12 each side)",
+                    "Mountain climbers (20 reps)",
+                    "Chair dips (10 reps, 3 sets)",
+                    "Speed walking in place (5 minutes)",
+                    "Zumba or dance workout (15 minutes)",
+                    "Swimming (20 minutes)",
+
+                    // Core & Cardio
+                    "Bicycle crunches (15 reps each side)",
+                    "Russian twists (with water bottle, 20 reps)",
+                    "Plank (hold for 30 seconds, 3 reps)",
+                    "Burpees (modified, 8 reps)",
+                    "Jump rope (2 minutes, 3 sets)",
+
+                    // Lifestyle Mods
+                    "Walk while talking on phone",
+                    "Stand up every 30 minutes at work",
+                    "House cleaning at double speed",
+                    "Gardening for 20 minutes",
+                    "Play with kids/pets actively for 15 minutes"
+                };
+            } else {
+                exercises = new String[] {
+                    // Maintenance & General Fitness
+                    "30-minute walk in your neighborhood",
+                    "Basic yoga stretches (15 minutes)",
+                    "Gardening or household chores",
+                    "Play with children/pets actively",
+                    "Swimming or water exercises",
+                    "Cycling (20 minutes at moderate pace)",
+                    "Tai chi (10 minutes)",
+                    "Surya Namaskar (3 rounds)",
+                    "Balance exercises: Tree pose (30 sec each leg)",
+                    "Foam rolling for muscle relaxation",
+                    "Deep breathing exercises (5 minutes)",
+                    "Desk stretches (every 2 hours)",
+                    "Park farther away for extra steps",
+                    "Take stairs instead of elevator",
+                    "Carry shopping bags (moderate weight)",
+
+                    // Strength & Flexibility
+                    "Bodyweight squats (12 reps, 3 sets)",
+                    "Lunges (10 reps each leg)",
+                    "Superman holds (20 seconds, 3 reps)",
+                    "Cat-Cow stretches (10 reps)",
+                    "Side-lying leg lifts (12 each side)"
+                };
+            }
+            int exerciseIndex = exerciseRand.nextInt(exercises.length);
+            %>
+            <p class="mb-1"><%= exercises[exerciseIndex] %></p>
+            <% if(bmi >= 25) { %>
+                <small class="text-muted">Weight loss tip: Replace white rice with millets like kambu or varagu twice weekly</small>
+            <% } else if(bmi < 18.5) { %>
+                <small class="text-muted">Try adding banana with curd rice as evening snack for healthy weight gain</small>
+            <% } else { %>
+                <small class="text-muted">Maintenance tip: Include 1 serving of leafy greens daily for micronutrients</small>
+            <% } %>
+        </div>
+    </div>
+</div>
             
             <div class="alert alert-primary">
                 <div class="d-flex align-items-start">
